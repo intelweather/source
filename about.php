@@ -30,8 +30,7 @@
   </body>
 </html>
 
-discord server: 
-https://discord.gg/FPpQbQfjkX
+
 
 api for finding latitude and longitude?
 api key: HBqzfroSyQom6L9fVphJwg==K5ofz2WJJab57Bgc
