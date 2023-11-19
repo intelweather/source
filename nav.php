@@ -16,7 +16,6 @@
     <div class="w3-dropdown-content w3-bar-block w3-border w3-black">
       <a href="forecast.php" class="w3-bar-item w3-button w3-hover-red">7 Day Forecast</a>
       <a href="weathernews.php" class="w3-bar-item w3-button w3-hover-red">Disaster Radar</a>
-      <a href="morelocations.php" class="w3-bar-item w3-button w3-hover-red">More Locations</a>
     </div>
   </div>
 

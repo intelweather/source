@@ -11,10 +11,10 @@
   $city = $_GET["city"];
   $state = $_GET["state"] ?? "";
   if ($state != "") {
-    $state = "&state" . $state;
+    $state = "&state=" . urlencode($state);
   }
   
-  $url = "https://api.api-ninjas.com/v1/geocoding?city=" . urlencode($city . $state . "US");
+  $url = "https://api.api-ninjas.com/v1/geocoding?city=" . urlencode($city) . $state . "&country=US";
   $response = file_get_contents($url, false, $context);
   echo $response;
 ?>

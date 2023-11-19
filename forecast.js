@@ -3,13 +3,115 @@
 var weather_list = document.getElementById("weather_list");
 var state = document.getElementById("state");
 var city = document.getElementById("city");
+var city_list = document.getElementById("search_list");
+var city_name = document.getElementById("city_name");
+
+async function api_url() {
+  const response = await fetch(`https://api.weather.gov/points/${localStorage.lat},${localStorage.long}`); 
+
+  let data = await response.json(); 
+
+  return data.properties.forecastGridData + "/forecast";
+}
+
+function reset_location() {
+  localStorage.clear();
+  setup();
+}
+
+function change_location(city, lat, long) {
+  localStorage.city_name = city;
+  localStorage.lat = lat;
+  localStorage.long = long;
+  close_model();
+  setup();
+}
+
+function close_model() {
+  state.value = "";
+  city.value = "";
+  city_list.innerHTML = ""
+  document.getElementById('model').style.display='none';
+}
 
 async function search() {
-  let locations = cho
+
+  if (city.value === "") {
+    alert("City is required");
+    return;
+  };
+
+  city_list.innerHTML = "Loading...";
+
+  let state_par = "";
+
+  if (state.value !== "") {
+    state_par = "&state=" + state.value;
+  };
+
+  const response = await fetch("loc_api.php?city=" + city.value + state_par); 
+  let data = await response.json();
+  city_list.innerHTML = "";
+
+  for (let index = 0; index < data.length; index++) {
+    let record = data[index]
+    let ui_city = document.createElement("div");
+    ui_city.classList.add("w3-container");
+    ui_city.classList.add("w3-animate-left");
+    ui_city.classList.add("w3-card");
+    ui_city.style.textAlign  = "left"
+    
+    // Name
+    let ui_name = document.createElement("div");
+    
+    let name_icon = document.createElement("span");
+    name_icon.classList.add("material-symbols-outlined");
+    name_icon.innerText = "apartment";
+    name_icon.style.verticalAlign = "bottom";
+    ui_name.appendChild(name_icon)
+
+    let name = document.createElement("span");
+    name.innerText = record["name"] + ", " + record["state"];
+    ui_name.appendChild(name)
+
+    ui_city.appendChild(ui_name)
+
+    // Lat Long
+    let ui_lat_long = document.createElement("div");
+    
+    let lat_long_icon = document.createElement("span");
+    lat_long_icon.classList.add("material-symbols-outlined");
+    lat_long_icon.innerText = "map";
+    lat_long_icon.style.verticalAlign = "bottom";
+    ui_lat_long.appendChild(lat_long_icon)
+
+    let lat_long = document.createElement("span");
+    lat_long.innerText = record["latitude"] + ", " + record["longitude"];
+    ui_lat_long.appendChild(lat_long)
+
+    // Button
+    let choose_button = document.createElement("button");
+    choose_button.classList.add("w3-button");
+    choose_button.classList.add("w3-blue");
+    choose_button.classList.add("w3-round");
+    choose_button.addEventListener("click", function() {change_location(record["name"] + ", " + record["state"], record["latitude"], record["longitude"])}, false);
+    choose_button.innerText = "Select";
+    
+    ui_city.appendChild(ui_lat_long)
+    ui_city.appendChild(choose_button)
+
+    city_list.appendChild(ui_city)
+
+    let line_break = document.createElement("p");
+    city_list.appendChild(line_break)
+  }
 }
 
 async function update_weather() {
-  const response = await fetch("https://api.weather.gov/gridpoints/SGX/42,51/forecast"); 
+  let url = await api_url();
+  
+  const response = await fetch(url); 
+  //const response = await fetch("https://api.weather.gov/gridpoints/SGX/42,51/forecast"); 
 
   let data = await response.json(); 
 
@@ -194,4 +296,16 @@ function get_image_names(today_data) {
   return forecast_short;
 }
 
-update_weather();
+function setup() {
+  if (!(localStorage.lat)) {
+    localStorage.city_name = "St. Anne School";
+    localStorage.lat = 33.4918;
+    localStorage.long = -117.7043;
+  }
+
+  city_name.innerText = localStorage.city_name;
+  weather_list.innerHTML = "";
+  update_weather();
+}
+
+setup();
