@@ -4,10 +4,23 @@
     <title>INTELWEATHER</title>
     <?php include 'libraries.php';?>
   </head>
-
   <body class="w3-black">
     <?php include 'nav.php';?>
-    <div class="w3-display-container" style="width: 95vw">
+    <div class="w3-diplay-container" style="width: 100vw; z-index: -2;">
+      <video autoplay loop muted plays-inline style="max-width: 100vw; ">
+        <source src="images/mainbanner.mp4" type="video/mp4">
+      </video>
+      
+      <div id="bannertext">
+        <h1 class="w3-jumbo">Welcome!</h1>
+        <div>
+          <p>Want a quick way to get accurate weather quick? Want to be notified every day of the weather that will occur that day on platforms like twitter and discord? Well, you have come to the right place. INTELWEATHER provides an accurate 7 day forecast, articles about why the weather is the way it is, and much more.</p>
+        </div>
+        <a href="forecast.php">7 Day Forecast</a>
+      </div>
+    </div>
+
+    <div class="w3-display-container" ">
       <div class="wrapper five w3-left">
           <span class="float-box">
               <h3 class="float"><img src="images/cloud.png" class="thumbnail" height="100" width="270" /> </h3>
@@ -18,11 +31,11 @@
       </div>
       <div class="wrapper five w3-right">
           <span class="float-box">
-              <h3 class="float"><img src="images/cloud.png" class="thumbnail" height="66" width="180" /> </h3>
+            <h3 class="float1"><img src="images/cloud.png" class="thumbnail" height="66" width="180" /> </h3>
           </span>
       </div>
     </div>
-  
+
     <div class="w3-container">
       <h2>Why You Should Use INTELWEATHER</h2>
       <div class="w3-container w3-row custom-row">
@@ -64,7 +77,18 @@
     <div class="w3-container">
       <button class="w3-blue-gray w3-button" onclick="window.location.href = 'forecast.php'" style="width: 80vw">View Full Forecast >>></button>
     </div>
-    
+
     <?php include 'footer.php';?>
-  </body>
+    <script>
+      var banner_text = document.getElementById("bannertext");
+      window.addEventListener('resize', function(event) {
+        if (window.innerWidth > 1263) {
+          banner_text.classList.add("w3-display-middle");
+          banner_text.classList.remove("w3-container");
+        } else {
+          banner_text.classList.add("w3-container");
+          banner_text.classList.remove("w3-display-middle")
+        }
+      }, true);
+    </script>
 </html>

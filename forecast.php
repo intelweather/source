@@ -6,6 +6,7 @@
   </head>
   <body class="w3-black">
     <?php include 'nav.php';?>
+    <img src="images/7dayforecastbanner.webp" style="width: 100vw" alt="7 Day Forecast Banner">
     
     <div id="model" class="w3-modal">
       <div class="w3-modal-content">
@@ -14,7 +15,7 @@
           <h2>Change Location</h2>
         </header>
         <div class="w3-container w3-black gradientbg">
-          <div class="label">City*</div>
+          <div class="label">City<span style="color: red;">*</span></div>
           <input id="city" type="text" placeholder="New York" class="w3-input w3-black w3-hover-white" />
 
           <div class="label">State</div>

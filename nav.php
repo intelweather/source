@@ -34,4 +34,5 @@
   
 </div>
 
-<img src="images/banner.webp" style="width: 100vw;" alt="INTELWEATHER Banner">
+<!-- <img src="images/banner.webp" style="width: 100vw;" alt="INTELWEATHER Banner">
+ -->

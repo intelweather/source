@@ -58,7 +58,7 @@ body {
 
 .button1:hover span {
   padding-right: 0px;
-  
+
 }
 
 .button1:hover span:after {
@@ -136,7 +136,7 @@ transform: scale(1.1);
     float: right;
     display: inline;
   }
-  
+
 }
 
 
@@ -171,13 +171,12 @@ transform: scale(1.1);
 }
 
 .wrapper.five {
-    
+
 }
 .wrapper.five2 {
-    
+
 }
 .float-box {
-    margin: auto;
     transform-style: preserve-3d;
     transform-origin: left;
     transform: perspective(100px) rotateY(10deg);
@@ -386,13 +385,13 @@ label {
   font:
     1rem 'Montserrat',
     sans-serif;
-  
+
 }
 
 input,
 label {
   margin: 0.4rem 0;
-  
+
 }
 body {
   font-family: 'Roboto', Arial, sans-serif;
@@ -490,3 +489,109 @@ transform: scale(1.1);
   background: rgb(38,38,38);
   background: linear-gradient(0deg, rgba(38,38,38,1) 0%, rgba(74,74,74,1) 50%, rgba(38,38,38,1) 100%);
 }
+
+.hero{
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(12,3,51,0.3),rgba(12,3,51,0.3));
+  position: relative;
+  padding: 0.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.content{
+  text-align: center;
+}
+
+.content h1{
+  font-size: 160px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.content a{
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  font-size: 24px;
+  border: 2px solid #fff;
+  padding: 14px 70px;
+  border-radius: 50px;
+  margin-top: 20px;
+}
+
+.back-video{
+  position: absolute;
+  right:0;
+  bottom:0;
+  z-index:-1;
+}
+
+@media (min-aspect-ratio: 16/9){
+  .back-video{
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-aspect-ratio: 16/9){
+  .back-video{
+    width: 100%;
+    height: auto;
+  }
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #333333;
+  transition: opacity 0.75s, visibility 0.75s;
+}
+
+.loader--hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader::after {
+  content: "";
+  width: 75px;
+  height: 75px;
+  border: 15px solid #dddddd;
+  border-top-color: #0b78d1;
+  border-radius: 50%;
+  animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+.limit{
+  width:750px;
+  word-wrap: break-word;
+  text-align: center;
+  float: center;
+}
+
+.limit2{
+  width:1000px;
+  word-wrap: break-word;
+
+
+  margin: 0 auto;
+}
+

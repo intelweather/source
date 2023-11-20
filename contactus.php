@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
   <?php include 'libraries.php';?>
-  
+  <?php include 'nav.php';?>
+
 </head>
+  <img src="images/contactusbanner.webp" style="width: 100vw;" alt="Contact Us Banner">
 <body>
-    <?php include 'nav.php';?>
+
 
     <h1>Contact Us</h1>
     <p>
@@ -18,7 +20,7 @@
 
       <label style="font-size: 1.5em;" for="email">Email (optional)</b></label>
       <input class="w3-input w3-black w3-hover-white" type="email" name="email" id="email">
-      
+
       <label style="font-size: 1.5em;" for="continent">Continent</b></label>
       <select name="continent" id="continent" required class="w3-select w3-black w3-hover-white">
         <option>Africa</option>

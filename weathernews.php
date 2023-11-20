@@ -4,18 +4,28 @@
     <title>INTELWEATHER</title>
     <?php include 'libraries.php';?>
   </head>
-  <body class="w3-black">
-    <?php include 'nav.php';?>
+  <?php include 'nav.php';?>
+  <img src="images/disasterradarbanner.webp" style="width: 100vw;" alt="Radar Banner">
 
-    <!--<div class="w3-display-container" style="width: 95vw">-->
+  <body class="w3-black">
+
+
+    <div class="w3-display-container" style="width: 95vw">
     <div class="wrapper five w3-left">
         <span class="float-box">
             <h3 class="float"><img src="images/lightning.png" class="thumbnail" height="125" width="80" style = "margin-left: 25px" /> </h3>
-        </span>-->
+        </span>
+    </div>
+    </div>
   <div class="w3-container w3-jumbo">
     Disaster Radar
-      
+
   </div>
+    <div class="wrapper five w3-right">
+        <span class="float-box">
+            <h3 class="float"><img src="images/earthquake.png" class="thumbnail" height="77" width="180" style = "margin-left: 25px" /> </h3>
+        </span>
+    </div>
     <!--</span>
       <div class="wrapper five w3-right">
       <span class="float-box">
@@ -31,7 +41,7 @@
         foreach ($feeds->item as $item) {
           if(!in_array((string)$item->title, $events)) {
             $events[] = (string)$item->title;
-            
+
             $title = $item->title;
             $link = $item->link;
             $description = $item->description;
@@ -48,7 +58,7 @@
           <?php } ?>
         <?php } ?>
     </div>
-    
+
     <?php include 'footer.php';?>
   </body>
 </html>

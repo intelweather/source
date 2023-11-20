@@ -6,6 +6,7 @@
   </head>
   <body class="w3-black">
     <?php include 'nav.php';?>
+    <img src="images/aboutusbanner.webp" style=" width: 100vw;" alt="INTELWEATHER Banner">
 
     <div class="w3-container w3-jumbo">
       About
@@ -29,10 +30,3 @@
     <?php include 'footer.php';?>
   </body>
 </html>
-
-
-
-api for finding latitude and longitude?
-api key: HBqzfroSyQom6L9fVphJwg==K5ofz2WJJab57Bgc
-https://api-ninjas.com/api/geocoding
-https://api.api-ninjas.com/v1/geocoding?city=Kyoto &country=Japan
