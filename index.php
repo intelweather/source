@@ -77,16 +77,15 @@
           <div class="w3-card-4 w3-container w3-black custom-card" data-aos="flip-up">
             <h3>Fast</h3>
             <p>
-              Did you know that the human attention span is 25% less than in 2000? The human attention span has fallen all the way down to 8.25 seconds, which is less than a goldfish. Therefore at INTELWEATHER, we understand that our app needs to be quick. With a loading time less than two seconds, you will never see a loading bar on INTELWEATHER.
-            </p>
+              Did you know that the human attention span is 25% less than in 2000? The human attention span has fallen all the way down to 8.25 seconds, which is less than a goldfish. Therefore at INTELWEATHER, we understand that our app needs to be quick. By using next-gen image formats, such as webp, INTELWEATHER is made for the next edition of the web, the faster one.
           </div>
           <br>
         </div>
         <div class="w3-container w3-third">
           <div class="w3-card-4 w3-container w3-black custom-card" data-aos="fade-right">
-            <h3>Personalized</h3>
+            <h3>Open Source</h3>
             <p>
-              INTELWEATHER is not the product of some giant company serching to making millions. INTELWEATHER, is made to provide simple ad-free weather. You can see reminders of our personalztion everywhere from images of St. Anne School to the simple color scheme.  
+              INTELWEATHER is not the product of some giant company serching to making millions. In fact, INTELWEATHER's goal is to provode reliable and ad free weather. All of our code is open source on <a href="https://github.com/intelweather">GitHub</a>. It would mean a lot to us if you could star our repos.
             </p>
           </div>
           <br>
@@ -94,9 +93,9 @@
       </div>
     </div>
     <br><br>    
-    <h2>Today's Weather</h2>
+    <h2>St Anne School's Weather <small class="w3-round-xxlarge" style="color: white; background-color: orange; padding: 2.5px">Video</small></h2>
     <video controls width="500px" style="max-width: 98vw" data-aos="zoom-in">
-      <source src="https://intelweatherbot.onrender.com/fetchvideo/" type="video/mp4">
+      <source type="video/mp4" id="daily_video">
       You browser is from the stone age.
       <br>
       <small>(or mp4 might be off)</small>
@@ -117,5 +116,7 @@
           banner_text.classList.remove("w3-display-middle")
         }
       }, true);
+
+      document.getElementById("daily_video").src = "https://intelweatherbot.onrender.com/fetchvideo?a=" + new Date().toISOString().slice(0, 10)
     </script>
 </html>
