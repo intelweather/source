@@ -6,7 +6,7 @@
   </head>
   <body class="w3-black">
     <?php include 'nav.php';?>
-    <img src="images/whydoesitsnow.webp" style="width: 100vw;" alt="Snow Banner">
+    <img src="images/snowbanner2.webp" style="width: 100vw;" alt="Snow Banner">
     <div class="wrapper five w3-right">
         <span class="float-box">
             <h3 class="float"><img src="images/snowflake.png" class="thumbnail" height="175" width="270" style = "margin-right: 25px"/> </h3>

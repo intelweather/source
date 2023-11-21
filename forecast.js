@@ -140,7 +140,7 @@ function gererate_ui(record) {
   for (let image of images) {
     let img = document.createElement("img");
     img.src = "images/weather/" + image;
-    img.width = "225px";
+    img.style.height = "125px";
     img.alt = "Weather icon for " + image;
     img.classList.add("shadow-image");
     ui_record.appendChild(img);
@@ -282,6 +282,7 @@ function get_image_names(today_data) {
     forecast = forecast.replaceAll("isolated", "");
     forecast = forecast.replaceAll("light", "");
     forecast = forecast.replaceAll("likely", "");
+    forecast = forecast.replaceAll("rainand", "");
     forecast = forecast.replaceAll("andthunderstorms", "rainy");
     forecast = forecast.replaceAll("rainy", "rain");
     forecast = forecast.replaceAll("rain", "rainy");

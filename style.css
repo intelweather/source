@@ -19,7 +19,6 @@ body {
 }
 
 .shadow-image {
-  width: 150px;
   -webkit-filter: drop-shadow(5px 5px 5px #c7c7c7);
   filter: drop-shadow(5px 5px 5px #c7c7c7);
 }

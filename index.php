@@ -3,20 +3,43 @@
   <head>
     <title>INTELWEATHER</title>
     <?php include 'libraries.php';?>
+    <?php include 'nav.php';?>
   </head>
   <body class="w3-black">
-    <?php include 'nav.php';?>
+    
     <div class="w3-diplay-container" style="width: 100vw; z-index: -2;">
-      <video autoplay loop muted plays-inline style="max-width: 100vw; ">
+      <video autoplay loop muted plays-inline style="width: 100vw; ">
         <source src="images/mainbanner.mp4" type="video/mp4">
       </video>
-      
+      <!-- <div class="hero"> Oh, um I modified the css slightly for mobile...
+      <video autoplay loop muted plays-inline class="back-video">
+        <source src="images/mainbanner.mp4" type="video/mp4">
+      </video>
+      <body class="w3-black">
+        <div class="loader"></div>
+        <script>
+          window.addEventListener("load", () => {
+            const loader = document.querySelector(".loader");
+    
+            loader.classList.add("loader--hidden");
+    
+            loader.addEventListener("transitionend", () => {
+              document.body.removeChild(loader);
+            });
+          });
+        </script>
+      </body>
+      </div>
+       --> 
       <div id="bannertext">
-        <h1 class="w3-jumbo">Welcome!</h1>
         <div>
-          <p>Want a quick way to get accurate weather quick? Want to be notified every day of the weather that will occur that day on platforms like twitter and discord? Well, you have come to the right place. INTELWEATHER provides an accurate 7 day forecast, articles about why the weather is the way it is, and much more.</p>
+          <h1 class="w3-jumbo">Welcome!</h1>
+          <div>
+            <p>Want a quick way to get accurate weather quick? Want to be notified every day of the weather that will occur that day on platforms like twitter and discord? Well, you have come to the right place. INTELWEATHER provides an accurate 7 day forecast, articles about why the weather is the way it is, and much more.</p>
+          </div> 
+          <a href="forecast.php" class="w3-btn w3-border w3-round">7 Day Forecast</a>
+          <a href="#down" class="w3-btn w3-border w3-round">Scroll Down</a>
         </div>
-        <a href="forecast.php">7 Day Forecast</a>
       </div>
     </div>
 
@@ -27,7 +50,9 @@
           </span>
       </div>
       <div class="w3-container w3-jumbo w3-middle">
-        The Weather You Can Trust
+        <a name="down">
+          The Weather You Can Trust
+        </a>
       </div>
       <div class="wrapper five w3-right">
           <span class="float-box">
@@ -71,7 +96,7 @@
     <br><br>    
     <h2>Today's Weather</h2>
     <video controls width="500px" style="max-width: 98vw" data-aos="zoom-in">
-      <source src="https://postbot.sasmlange.repl.co/fetchvideo/" type="video/mp4">
+      <source src="https://intelweatherbot.onrender.com/fetchvideo/" type="video/mp4">
       You browser is from the stone age.
     </video>
     <div class="w3-container">
