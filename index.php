@@ -98,6 +98,8 @@
     <video controls width="500px" style="max-width: 98vw" data-aos="zoom-in">
       <source src="https://intelweatherbot.onrender.com/fetchvideo/" type="video/mp4">
       You browser is from the stone age.
+      <br>
+      <small>(or mp4 might be off)</small>
     </video>
     <div class="w3-container">
       <button class="w3-blue-gray w3-button" onclick="window.location.href = 'forecast.php'" style="width: 80vw">View Full Forecast >>></button>
